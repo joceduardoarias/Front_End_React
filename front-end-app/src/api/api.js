@@ -1,5 +1,5 @@
 // src/api/api.js
-const API_URL = 'http://localhost:5000/api';
+import config from '../config';
 
 const request = async (url, options = {}) => {
   const response = await fetch(url, {
@@ -13,34 +13,34 @@ const request = async (url, options = {}) => {
   return response.json();
 };
 
-export const register = (userData) => request(`${API_URL}/register`, {
+export const register = (userData) => request(`${config.API_URL}/register`, {
   method: 'POST',
   body: JSON.stringify(userData)
 });
 
-export const login = (userData) => request(`${API_URL}/login`, {
+export const login = (userData) => request(`${config.API_URL}/login`, {
   method: 'POST',
   body: JSON.stringify(userData)
 });
 
-export const logout = () => request(`${API_URL}/logout`, {
+export const logout = () => request(`${config.API_URL}/logout`, {
   method: 'POST'
 });
 
-export const getAllPlayers = () => request(`${API_URL}/footballplayers`);
+export const getAllPlayers = () => request(`${config.API_URL}/footballplayers`);
 
-export const getPlayerById = (id) => request(`${API_URL}/footballplayers/${id}`);
+export const getPlayerById = (id) => request(`${config.API_URL}/footballplayers/${id}`);
 
-export const createPlayer = (playerData) => request(`${API_URL}/footballplayers`, {
+export const createPlayer = (playerData) => request(`${config.API_URL}/footballplayers`, {
   method: 'POST',
   body: JSON.stringify(playerData)
 });
 
-export const updatePlayer = (id, playerData) => request(`${API_URL}/footballplayers/update/${id}`, {
+export const updatePlayer = (id, playerData) => request(`${config.API_URL}/footballplayers/update/${id}`, {
   method: 'PUT',
   body: JSON.stringify(playerData)
 });
 
-export const deletePlayer = (id) => request(`${API_URL}/footballplayers/delete/${id}`, {
+export const deletePlayer = (id) => request(`${config.API_URL}/footballplayers/delete/${id}`, {
   method: 'DELETE'
 });

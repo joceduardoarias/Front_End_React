@@ -1,0 +1,22 @@
+/* src/components/FootballPlayers/PlayerCard.css */
+.player-card {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px;
+  width: 200px;
+  text-align: center;
+  background-color: #f8f8f8;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.player-card h2 {
+  margin: 0;
+  font-size: 1.5em;
+  color: #333;
+}
+
+.player-card p {
+  margin: 5px 0;
+  color: #666;
+}

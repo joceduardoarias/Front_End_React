@@ -1,4 +1,8 @@
+// src/components/FootballPlayers/PlayerList.jsx
 import React, { useEffect, useState } from 'react';
+import { getAllPlayers } from '../../api/api';
+import PlayerCard from './PlayerCard';
+import './PlayerList.css';
 
 const PlayerList = () => {
   const [players, setPlayers] = useState([]);
@@ -6,12 +10,7 @@ const PlayerList = () => {
   useEffect(() => {
     const fetchPlayers = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/footballplayers', {
-          headers: {
-            'Authorization': `Bearer ${localStorage.getItem('token')}`
-          }
-        });
-        const data = await response.json();
+        const data = await getAllPlayers();
         setPlayers(data);
       } catch (error) {
         console.error('Failed to fetch players:', error);
@@ -24,11 +23,11 @@ const PlayerList = () => {
   return (
     <div>
       <h1>Football Players</h1>
-      <ul>
+      <div className="player-list">
         {players.map((player) => (
-          <li key={player._id}>{player.name}</li>
+          <PlayerCard key={player._id} player={player} />
         ))}
-      </ul>
+      </div>
     </div>
   );
 };

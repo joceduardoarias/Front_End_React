@@ -11,7 +11,7 @@ const PlayerForm = ({ isEdit }) => {
     if (isEdit) {
       const fetchPlayer = async () => {
         try {
-          const response = await fetch(`http://localhost:5000/api/footballplayers/${id}`, {
+          const response = await fetch(`http://localhost:3000/api/footballplayers/${id}`, {
             headers: {
               'Authorization': `Bearer ${localStorage.getItem('token')}`
             }
@@ -37,8 +37,8 @@ const PlayerForm = ({ isEdit }) => {
     try {
       const method = isEdit ? 'PUT' : 'POST';
       const url = isEdit
-        ? `http://localhost:5000/api/footballplayers/update/${id}`
-        : 'http://localhost:5000/api/footballplayers';
+        ? `http://localhost:3000/api/footballplayers/update/${id}`
+        : 'http://localhost:3000/api/footballplayers';
       const response = await fetch(url, {
         method,
         headers: {

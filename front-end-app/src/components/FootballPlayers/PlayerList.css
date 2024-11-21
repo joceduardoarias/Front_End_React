@@ -1,0 +1,6 @@
+/* src/components/FootballPlayers/PlayerList.css */
+.player-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}

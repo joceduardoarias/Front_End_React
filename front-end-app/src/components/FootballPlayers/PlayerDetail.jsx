@@ -9,7 +9,7 @@ const PlayerDetail = () => {
   useEffect(() => {
     const fetchPlayer = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/api/footballplayers/${id}`, {
+        const response = await fetch(`http://localhost:3000/api/footballplayers/${id}`, {
           headers: {
             'Authorization': `Bearer ${localStorage.getItem('token')}`
           }
