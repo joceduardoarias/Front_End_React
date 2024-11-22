@@ -7,6 +7,7 @@ import RegisterPage from './pages/RegisterPage';
 import Home from './pages/Home';
 import PlayerPage from './pages/PlayerPage';
 import EditPlayerPage from './pages/EditPlayerPage';
+import AddPlayerPage from './pages/AddPlayerPage';
 import PrivateRoute from './components/PrivateRoute';
 
 const App = () => {
@@ -18,6 +19,7 @@ const App = () => {
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/players" element={<PrivateRoute element={PlayerPage} />} />
           <Route path="/edit-player/:id" element={<PrivateRoute element={EditPlayerPage} />} />
+          <Route path="/add-player" element={<PrivateRoute element={AddPlayerPage} />} />
           <Route path="/" element={<PrivateRoute element={Home} />} />
         </Routes>
       </Router>
