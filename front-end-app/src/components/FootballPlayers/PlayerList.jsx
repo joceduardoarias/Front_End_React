@@ -21,8 +21,7 @@ const PlayerList = () => {
   }, []);
 
   return (
-    <div>
-      <h1>Football Players</h1>
+    <div>      
       <div className="player-list">
         {players.map((player) => (
           <PlayerCard key={player._id} player={player} />
